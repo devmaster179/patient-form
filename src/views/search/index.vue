@@ -1,11 +1,8 @@
-<template class="blueColor">
+<template>
     <v-form v-model="valid">
-      <v-container>
+      <v-container fluid class="blueColor">
         <v-row>
-          <v-col
-            cols="12"
-            md="8"
-          >
+          <v-col cols="12" md="8">
             <v-text-field
               v-model="firstname"
               :rules="nameRules"
@@ -18,25 +15,26 @@
         </v-row>
       </v-container>
     </v-form>
-  </template>
+
+</template>
 
 <script>
-import './style.css';
+import "./style.css";
 
 export default {
   data: () => ({
     valid: false,
-    firstname: '',
-    lastname: '',
+    firstname: "",
+    lastname: "",
     nameRules: [
-      v => !!v || 'Name is required',
-      v => v.length <= 10 || 'Name must be less than 10 characters',
+      (v) => !!v || "Name is required",
+      (v) => v.length <= 10 || "Name must be less than 10 characters",
     ],
-    email: '',
+    email: "",
     emailRules: [
-      v => !!v || 'E-mail is required',
-      v => /.+@.+/.test(v) || 'E-mail must be valid',
+      (v) => !!v || "E-mail is required",
+      (v) => /.+@.+/.test(v) || "E-mail must be valid",
     ],
   }),
-}
+};
 </script>
