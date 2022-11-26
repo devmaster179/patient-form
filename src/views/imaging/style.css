@@ -1,0 +1,51 @@
+
+.imaging {
+    margin: 80px 0;
+}
+.imaging .imagingInner {
+    max-width: 540px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.imaging .titleImg {
+    display: flex;
+    justify-content: space-between;
+	align-items: center;
+	margin-bottom: 20px;
+}
+.imaging .titleImg  img {
+	width: 150px;
+}
+.imaging .titleImg h3 {
+    font-size: 22px;
+}
+.cardBlock .v-card {
+    box-shadow: none;
+}
+.cardBlock .v-card .v-card-item {
+    padding-left: 0;
+    padding-right: 0;
+}
+.cardBlock .v-card-title img {
+    margin-right: 15px;
+}
+.cardBlock .v-card-text {
+    padding-left: 40px;
+    padding-right: 0;
+	font-size: 16px;
+    line-height: 22px;
+}
+.cardBlock .v-card-item .v-card-title {
+    display: flex;
+    align-items: center;
+	font-weight: bold;
+}
+.beginBtn button {
+    background: #1B6EF9;
+    color: #fff;
+    height: 50px !important;
+    font-size: 18px;
+    text-transform: capitalize;
+}

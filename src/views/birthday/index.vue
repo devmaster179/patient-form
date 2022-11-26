@@ -1,19 +1,8 @@
 <template>
-<v-container fluid class="blueColor vh100">
-<v-btn class="backBtn" prepend-icon="mdi-arrow-left">
-  Back
-</v-btn>
     <v-form v-model="valid">
-      <v-container fluid class="blueColor ">
+      <v-container fluid class="blueColor">
         <v-row>
-          <v-col cols="12" md="12">
-          <div class="searchWrapper">
-          <h3><img src="../../assets/health.png"> PockectHealth</h3>
-          <h2>Request Your Medical Imaging Records</h2>
-          <div class="inputBtn">
-          <v-btn class="searchBtn">
-            <img src="../../assets/search.png">
-          </v-btn>
+          <v-col cols="12" md="8">
             <v-text-field
               v-model="firstname"
               :rules="nameRules"
@@ -22,13 +11,11 @@
               required
               placeholder="Try typing your hospital / clinic name or address"
             ></v-text-field>
-            </div>
-            </div>
           </v-col>
         </v-row>
       </v-container>
     </v-form>
-</v-container>
+
 </template>
 
 <script>

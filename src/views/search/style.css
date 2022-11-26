@@ -1,3 +1,56 @@
 .blueColor{
-	background-color: #1B6EF9;
+	background: rgb(35,81,252);
+	background: linear-gradient(90deg, rgba(35,81,252,1) 0%, rgba(19,138,246,1) 45%, rgba(6,179,241,1) 100%);
+}
+.vh100 {
+    height: 100vh;
+    position: relative;
+}
+button.backBtn {
+    background-color: transparent;
+    box-shadow: none;
+    color: #fff;
+    text-transform: capitalize;
+}
+
+.searchWrapper {
+    width: 100%;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+	color: #fff;
+	text-align: center;
+}
+.searchWrapper h3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.searchWrapper h2 {
+	font-size: 42px;
+	margin: 20px 0;
+}
+.inputBtn {
+	position: relative;
+}
+.inputBtn button.searchBtn {
+    background: transparent;
+    padding: 0;
+    box-shadow: none;
+    position: absolute;
+    left: 0;
+    top: 10px;
+    z-index: 1;
+}
+.inputBtn button.searchBtn:hover {
+	box-shadow: none;
+}
+.inputBtn .v-field.v-field--variant-filled.v-theme--light {
+    background-color: #fff;
+    color: #999;
+    padding-left: 45px;
 }
