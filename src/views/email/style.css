@@ -129,3 +129,104 @@ health css
 button.pressEnterBtn:hover {
 	background-color: #2351fc;
 }
+
+/**
+confirm css
+*/
+.confirmInner p {
+    color: #888;
+}
+.confirmBlock {
+    border: 1px solid #dadada;
+    border-radius: 4px;
+	margin: 40px 0;
+}
+.singleBlock {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    border-bottom: 1px solid #dadada;
+	align-items: center;
+}
+.singleBlock .singleBlockInner label {
+    font-weight: 600;
+}
+.singleBlock .singleBlockInner h5 {
+    font-weight: 400;
+    font-size: 16px;
+    color: #555;
+}
+.editBtn button.editButton {
+    padding: 0;
+    min-width: auto;
+    box-shadow: none;
+    text-transform: capitalize;
+    color: #0085f9;
+    font-size: 14px;
+}
+.singleBlock.lastBlock {
+    border-bottom: none;
+}
+.confirmOuter {
+    margin: 100px auto;
+}
+
+/**
+full name css
+*/
+.emailFormInner p {
+    margin-bottom: 15px;
+}
+.emailForm.nameForm .emailFormInner.FullNameFields {
+    max-width: 500px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/**
+realtion css
+*/
+.paitentWrapper .confirmInner p {
+    color: #888;
+}
+.paitentWrapper .confirmBlock {
+    border-radius: 4px;
+	margin: 40px 0;
+    border: none;
+}
+.paitentWrapper  .singleBlock {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    border: 1px solid #dadada;
+	align-items: center;
+    margin: 15px 0;
+    border-radius: 4px;
+}
+.paitentWrapper .confirmInner, .paitentWrapper .fill-height.beginBtn {
+    max-width: 500px;
+    width: 100%;
+}
+.paitentWrapper .singleBlock .singleBlockInner label {
+    font-weight: 600;
+}
+.paitentWrapper .singleBlock .singleBlockInner h5 {
+    font-weight: 400;
+    font-size: 16px;
+    color: #555;
+}
+.paitentWrapper .editBtn button.editButton {
+    padding: 0;
+    min-width: auto;
+    box-shadow: none;
+    text-transform: capitalize;
+    color: #0085f9;
+    font-size: 14px;
+}
+.paitentWrapper .singleBlock.lastBlock {
+    border-bottom: none;
+}
+.paitentWrapper .confirmOuter {
+    margin: 100px auto;
+}

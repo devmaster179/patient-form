@@ -55,5 +55,11 @@ export default {
       (v) => /.+@.+/.test(v) || "E-mail must be valid",
     ],
   }),
+  mounted() {},
+  methods: {
+    next() {
+      this.$router.push({ name: "Confirm" });
+    },
+  },
 };
 </script>

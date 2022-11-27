@@ -1,3 +1,37 @@
-.blueColor{
-	background-color: #1B6EF9;
+.confirmInner p {
+    color: #888;
+}
+.confirmBlock {
+    border: 1px solid #dadada;
+    border-radius: 4px;
+	margin: 40px 0;
+}
+.singleBlock {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    border-bottom: 1px solid #dadada;
+	align-items: center;
+}
+.singleBlock .singleBlockInner label {
+    font-weight: 600;
+}
+.singleBlock .singleBlockInner h5 {
+    font-weight: 400;
+    font-size: 16px;
+    color: #555;
+}
+.editBtn button.editButton {
+    padding: 0;
+    min-width: auto;
+    box-shadow: none;
+    text-transform: capitalize;
+    color: #0085f9;
+    font-size: 14px;
+}
+.singleBlock.lastBlock {
+    border-bottom: none;
+}
+.confirmOuter {
+    margin: 100px auto;
 }
