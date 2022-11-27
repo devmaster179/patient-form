@@ -1,22 +1,43 @@
 <template>
+  <v-container fluid class="emailWrapper">
+    <v-row>
+      <v-col cols="12" md="12">
+        <div class="d-flex logoWrap">
+          <a href="#"><img src="../../assets/clearLogo.png" /></a>
+        </div>
+      </v-col>
+    </v-row>
+    <div class="emailForm nameForm">
     <v-form v-model="valid">
-      <v-container fluid class="blueColor">
-        <v-row>
-          <v-col cols="12" md="8">
-            <v-text-field
-              v-model="firstname"
-              :rules="nameRules"
-              :counter="10"
-              label="Search"
-              required
-              placeholder="Try typing your hospital / clinic name or address"
-            ></v-text-field>
-          </v-col>
-        </v-row>
-      </v-container>
+      <v-row class="align-items-center">
+      <v-col cols="12" md="3">
+      <v-btn class="emailArrowBtn" prepend-icon="mdi-arrow-left"> </v-btn>
+      </v-col>
+        <v-col cols="12" md="6">
+        <div class="emailFormInner">
+        <h2>What's your first & middle name ?</h2>
+        <p>As it appears on your crad. Please include any middle name(s) that appear on your health card.</p>
+        <label>First & Middle name</label>
+          <v-text-field
+            v-model="firstname"
+            :rules="nameRules"
+            :counter="10"
+            label="e.g. Ada Augusta"
+            required
+            placeholder="e.g. Ada Augusta"
+          ></v-text-field>
+            <div class="pressEnter">
+             Press Enter <v-btn class="pressEnterBtn" prepend-icon="mdi-arrow-right" @click="next()"> </v-btn>
+            </div>
+          </div>
+        </v-col>
+          <v-col cols="12" md="3"></v-col>
+      </v-row>
     </v-form>
-
+    </div>
+  </v-container>
 </template>
+
 
 <script>
 import "./style.css";
@@ -36,5 +57,11 @@ export default {
       (v) => /.+@.+/.test(v) || "E-mail must be valid",
     ],
   }),
+  mounted() {},
+  methods: {
+    next() {
+      this.$router.push({ name: "Birthday" });
+    },
+  },
 };
 </script>

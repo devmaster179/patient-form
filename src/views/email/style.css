@@ -69,3 +69,63 @@ button.pressEnterBtn {
 button.pressEnterBtn span.v-btn__prepend {
 	margin: 0;
 }
+
+/**
+ name css
+*/
+.emailFormInner p {
+    margin-bottom: 15px;
+}
+.emailForm.nameForm .emailFormInner {
+    max-width: 400px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/**
+bday css
+*/
+.blueColor{
+	background-color: #1B6EF9;
+}
+.birthdayFields {
+    display: flex;
+}
+.v-input.yearField {
+    width: 100px;
+    min-width: 100px;
+    max-width: 130px;
+    margin-left: 15px;
+}
+.emailFormInner p, .emailFormInner label {
+	color: #888;
+}
+
+/**
+health css
+*/
+.healthFields {
+    display: flex;
+    align-items: flex-start;
+}
+.healthFields .v-input.yearField {
+    max-width: 200px;
+    margin-left: 0;
+}
+.healthFields .addField {
+    display: flex;
+    align-items: stretch;
+}
+.healthFields .addField span.addhyphon {
+    background-color: #eee;
+    display: flex;
+    padding: 15px;
+    height: 58px;
+}
+.emailFormInner  .healthFields .addField .v-field {
+	border-color: #eee !important;
+}
+button.pressEnterBtn:hover {
+	background-color: #2351fc;
+}

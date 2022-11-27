@@ -1,3 +1,24 @@
-.blueColor{
-	background-color: #1B6EF9;
+.healthFields {
+    display: flex;
+    align-items: flex-start;
+}
+.healthFields .v-input.yearField {
+    max-width: 200px;
+    margin-left: 0;
+}
+.healthFields .addField {
+    display: flex;
+    align-items: stretch;
+}
+.healthFields .addField span.addhyphon {
+    background-color: #eee;
+    display: flex;
+    padding: 15px;
+    height: 58px;
+}
+.emailFormInner  .healthFields .addField .v-field {
+	border-color: #eee !important;
+}
+button.pressEnterBtn:hover {
+	background-color: #2351fc;
 }

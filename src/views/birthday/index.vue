@@ -43,7 +43,7 @@
           ></v-text-field>
           </div>
             <div class="pressEnter">
-             Press Enter <v-btn class="pressEnterBtn" prepend-icon="mdi-arrow-right"> </v-btn>
+             Press Enter <v-btn class="pressEnterBtn" prepend-icon="mdi-arrow-right" @click="next()"> </v-btn>
             </div>
           </div>
         </v-col>
@@ -72,5 +72,11 @@ export default {
       (v) => /.+@.+/.test(v) || "E-mail must be valid",
     ],
   }),
+  mounted() {},
+  methods: {
+    next() {
+      this.$router.push({ name: "Health" });
+    },
+  },
 };
 </script>
