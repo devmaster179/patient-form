@@ -154,7 +154,6 @@ confirm css
     color: #888;
 }
 .confirmBlock {
-    border: 1px solid #dadada;
     border-radius: 4px;
 	margin: 40px 0;
 }
@@ -164,12 +163,19 @@ confirm css
     background-color: #2d2e40;
     padding: 20px;
 }
+.singleBlock:hover, .singleBlockhover {
+    box-shadow: rgba(255,255,255) 0 0 0 2px;
+    border: 1px solid #fff;
+}
 .singleBlock {
     display: flex;
     justify-content: space-between;
     padding: 15px;
-    border-bottom: 1px solid #dadada;
-	align-items: center;
+    border: 1px solid #dadada;
+    align-items: center;
+    margin: 10px 0;
+    border-radius: 12px;
+    cursor: pointer;
 }
 .singleBlock .singleBlockInner label {
     font-weight: 600;

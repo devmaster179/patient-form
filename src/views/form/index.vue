@@ -348,27 +348,27 @@
           <div class="confirmInner">
               <h2>What is your relationship to the paitent ?</h2>
               <div class="confirmBlock">
-                  <div class="singleBlock">
+                  <div class="singleBlock" @click="setRelation(1)">
                     <div class="singleBlockInner">
                       <label>Family Member</label>
                       <h5>E.g. spouse, partner, parents, siblings, children, other relatives </h5>
                     </div>
                   </div>
-                  <div class="singleBlock">
+                  <div class="singleBlock" @click="setRelation(2)">
                     <div class="singleBlockInner">
                       <label>Legally Appointed Individual</label>
                       <h5>E.g. Power of Attorney for Personal Care, court-appointed guardian, representative appointed by Consent & Capacity Board
                       (no famil relation)</h5>
                     </div>
                   </div>
-                  <div class="singleBlock">
+                  <div class="singleBlock" @click="setRelation(3)">
                     <div class="singleBlockInner">
                       <label>Public Guardian & Trustee</label>
                     </div>
                   </div>
               </div>
               <div class="fill-height beginBtn">
-                <v-btn block>
+                <v-btn block @click="redirectSignup()">
                       Next 
                 </v-btn>
              </div>
@@ -425,7 +425,8 @@ export default {
       (v) => !!v || "Phone is required",
     ],
     step: 1,
-    progress: 12.5
+    progress: 12.5,
+    selectedRealtion: ''
   }),
   mounted() {},
   methods: {
@@ -436,6 +437,13 @@ export default {
     previous(){
       this.step = this.step - 1;
       this.progress = this.step * 12.5;
+    },
+    setRelation(relation){
+      this.selectedRealtion = relation;
+    },
+    redirectSignup(){
+      this.$router.replace({name: "Signup"})
+
     }
   },
 };

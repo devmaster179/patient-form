@@ -50,7 +50,7 @@
                   </v-card-text>
                 </v-card>
                   <div class="fill-height beginBtn">
-                  <v-btn block>
+                  <v-btn block @click="openSteps()">
                      Begin
                   </v-btn>
                   </div>
@@ -81,5 +81,10 @@ export default {
       (v) => /.+@.+/.test(v) || "E-mail must be valid",
     ],
   }),
+  methods: {
+   openSteps(){
+    this.$router.replace({name: "Form"})
+   }
+  },
 };
 </script>

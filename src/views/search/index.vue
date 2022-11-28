@@ -27,7 +27,7 @@
           </v-text-field>
             <div class="searchSuggest">
               <ul>
-                <li v-for="innerData in data">
+                <li v-for="innerData in data" @click="openImaging()">
                   {{ innerData.name }}
                 </li>
               </ul>
@@ -83,6 +83,9 @@ export default {
         console.log(err);
       });
 
+   },
+   openImaging(){
+    this.$router.replace({name: "Imaging"})
    }
   },
 };
