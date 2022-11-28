@@ -1,10 +1,10 @@
 <template>
-<v-container fluid class="blueColor vh100">
+<v-container fluid class=" vh100">
 <v-btn class="backBtn" prepend-icon="mdi-arrow-left">
   Back
 </v-btn>
     <v-form v-model="valid">
-      <v-container fluid class="blueColor ">
+      <v-container fluid class=" ">
         <v-row>
           <v-col cols="12" md="12">
           <div class="searchWrapper">
@@ -15,13 +15,23 @@
             <img src="../../assets/search.png">
           </v-btn>
             <v-text-field
-              v-model="firstname"
-              :rules="nameRules"
+              v-model="query"
+              :rules="queryRules"
               :counter="10"
               label="Search"
               required
               placeholder="Try typing your hospital / clinic name or address"
-            ></v-text-field>
+              @input="debouncedOnChange"
+            >
+              
+          </v-text-field>
+            <div class="searchSuggest">
+              <ul>
+                <li v-for="innerData in data">
+                  {{ innerData.name }}
+                </li>
+              </ul>
+            </div>
             </div>
             </div>
           </v-col>
@@ -32,22 +42,48 @@
 </template>
 
 <script>
+import algoliasearch from 'algoliasearch';
+import _ from 'lodash';
+
+const client = algoliasearch(process.env.VUE_APP_AGOLIA_APPLICATION_ID, process.env.VUE_APP_AGOLIA_ADMIN_KEY);
+const index = client.initIndex(process.env.VUE_APP_AGOLIA_INDEX_NAME);
+
 import "./style.css";
 
 export default {
   data: () => ({
     valid: false,
-    firstname: "",
-    lastname: "",
-    nameRules: [
-      (v) => !!v || "Name is required",
-      (v) => v.length <= 10 || "Name must be less than 10 characters",
+    query: "",
+    queryRules: [
+      (v) => !!v || "Search is required",
     ],
-    email: "",
-    emailRules: [
-      (v) => !!v || "E-mail is required",
-      (v) => /.+@.+/.test(v) || "E-mail must be valid",
-    ],
+    data: []
   }),
+  mounted() {
+    console.log('process.env.VUE_APP_API_BASE_URL', process.env.VUE_APP_API_BASE_URL);
+  },
+  computed: {
+    debouncedOnChange () {
+      return _.debounce(this.search, 700);
+    }
+  },
+  methods: {
+   search (){
+    if(!this.query) {
+      this.data=[];
+      return false;
+    }
+    index
+      .search(this.query)
+      .then(({ hits }) => {
+        console.log('hits', hits);
+        this.data = hits;
+      })
+      .catch(err => {
+        console.log(err);
+      });
+
+   }
+  },
 };
 </script>

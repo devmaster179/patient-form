@@ -19,8 +19,18 @@ button.emailArrowBtn:hover {
 .emailFormInner h2 {
 	margin-bottom: 20px;
 }
+.emailFormInner {
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgb(0 0 0 / 10%);
+    background-color: #2d2e40;
+}
+button.emailArrowBtn {
+    color: #fff;
+    background: transparent;
+}
 .emailFormInner .v-field {
-    border: 1px solid rgb(35,81,252);
+    border: 1px solid rgb(255,255,255);
     box-shadow: none;
     border-radius: 4px;
 }
@@ -29,7 +39,13 @@ button.emailArrowBtn:hover {
     box-shadow: none;
     border-bottom: none !important;
 	border-radius: 4px;
-
+    color: #333;
+}
+.progressWrapper .v-progress-linear__determinate.bg-primary {
+    background-color: #25bf7f !important;
+}
+.progressWrapper .v-progress-linear__background.bg-primary {
+    background-color: rgba(37, 191, 127, 0.7) !important;
 }
 .emailForm {
     position: absolute;
@@ -122,12 +138,13 @@ health css
     display: flex;
     padding: 15px;
     height: 58px;
+    color: #333;
 }
 .emailFormInner  .healthFields .addField .v-field {
 	border-color: #eee !important;
 }
 button.pressEnterBtn:hover {
-	background-color: #2351fc;
+	background-color: #25bf7f;
 }
 
 /**
@@ -140,6 +157,12 @@ confirm css
     border: 1px solid #dadada;
     border-radius: 4px;
 	margin: 40px 0;
+}
+.confirmInner {
+    box-shadow: 0px 0px 20px rgb(0 0 0 / 10%);
+    border-radius: 10px;
+    background-color: #2d2e40;
+    padding: 20px;
 }
 .singleBlock {
     display: flex;
@@ -161,8 +184,9 @@ confirm css
     min-width: auto;
     box-shadow: none;
     text-transform: capitalize;
-    color: #0085f9;
+    color: #25bf7f;
     font-size: 14px;
+    background-color: transparent;
 }
 .singleBlock.lastBlock {
     border-bottom: none;
@@ -221,8 +245,9 @@ realtion css
     min-width: auto;
     box-shadow: none;
     text-transform: capitalize;
-    color: #0085f9;
+    color: #25bf7f;
     font-size: 14px;
+    background-color: transparent;
 }
 .paitentWrapper .singleBlock.lastBlock {
     border-bottom: none;

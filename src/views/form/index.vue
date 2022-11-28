@@ -298,10 +298,11 @@
                 </div>
               </div>
             </div>
-          </div>
-          <div class="fill-height beginBtn">
+            <div class="fill-height beginBtn">
             <v-btn block  @click="next(7)"> Confirm </v-btn>
           </div>
+          </div>
+
         </v-col>
         <v-col cols="12" md="3"> </v-col>
       </v-row>
@@ -366,12 +367,12 @@
                     </div>
                   </div>
               </div>
-            </div>
-            <div class="fill-height beginBtn">
+              <div class="fill-height beginBtn">
                 <v-btn block>
                       Next 
                 </v-btn>
              </div>
+            </div>
           </v-col>
           <v-col cols="12" md="3">
         </v-col>

@@ -1,6 +1,6 @@
 .blueColor{
-	background: rgb(35,81,252);
-	background: linear-gradient(90deg, rgba(35,81,252,1) 0%, rgba(19,138,246,1) 45%, rgba(6,179,241,1) 100%);
+/*	background: rgb(35,81,252);
+	background: linear-gradient(90deg, rgba(35,81,252,1) 0%, rgba(19,138,246,1) 45%, rgba(6,179,241,1) 100%); */
 }
 .vh100 {
     height: 100vh;
@@ -24,6 +24,10 @@ button.backBtn {
     transform: translate(-50%, -50%);
 	color: #fff;
 	text-align: center;
+    background: #2d2e40;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgb(0 0 0 / 10%);
 }
 .searchWrapper h3 {
     display: flex;
@@ -53,4 +57,21 @@ button.backBtn {
     background-color: #fff;
     color: #999;
     padding-left: 45px;
+    border-radius: 4px;
+}
+.searchSuggest {
+    max-height: 250px;
+    overflow-y: auto;
+}
+.searchSuggest ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+}
+.searchSuggest ul li:hover {
+    background-color: #585a77;
+    cursor: pointer;
+}
+.searchSuggest ul li {
+    padding: 10px;
 }

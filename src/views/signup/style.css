@@ -35,3 +35,12 @@
     text-transform: capitalize;
     font-size: 18px;
 }
+.signupWrapper .signupInner label {
+    color: #8b8b8b;
+}
+.signupInner .formGroup .v-input__control .v-selection-control__input {
+    background: #1d1c2a;
+}
+.signupWrapper .signupInner .formGroup .v-input__details .v-messages {
+    color: red;
+}
