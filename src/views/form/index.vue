@@ -3,7 +3,7 @@
     <v-row>
       <v-col cols="12" md="12">
         <div class="d-flex logoWrap">
-          <a href="#"><img src="../../assets/clearLogo.png" /></a>
+          <h2>{{hospitalName}}</h2>
         </div>
       </v-col>
     </v-row>
@@ -15,7 +15,7 @@
       <v-form v-model="valid">
         <v-row class="align-items-center">
           <v-col cols="12" md="3">
-            <v-btn class="emailArrowBtn" prepend-icon="mdi-arrow-left"> </v-btn>
+            <v-btn class="emailArrowBtn" prepend-icon="mdi-arrow-left" @click="redirectImaging()"> </v-btn>
           </v-col>
           <v-col cols="12" md="6">
             <div class="emailFormInner">
@@ -64,9 +64,9 @@
                 v-model="firstMiddle"
                 :rules="firstMiddleRules"
                 :counter="10"
-                label="e.g. Ada Augusta"
+                label="e.g. Ali Nexusmd"
                 required
-                placeholder="e.g. Ada Augusta"
+                placeholder="e.g. Ali Nexusmd"
               ></v-text-field>
               <div class="pressEnter">
                 Press Enter
@@ -151,7 +151,7 @@
     </div>
 
     <!--Health card-->
-    <div class="emailForm" v-if="step == 4">
+    <div class="emailForm" v-if="step == 100">
       <v-form v-model="valid">
         <v-row class="align-items-center">
           <v-col cols="12" md="3">
@@ -204,7 +204,7 @@
     </div>
 
     <!--Phone card-->
-    <div class="emailForm" v-if="step == 5">
+    <div class="emailForm" v-if="step == 4">
       <v-form v-model="valid">
         <v-row class="align-items-center">
           <v-col cols="12" md="3">
@@ -227,7 +227,7 @@
                 <v-btn
                   class="pressEnterBtn"
                   prepend-icon="mdi-arrow-right"
-                  @click="next(6)"
+                  @click="next(5)"
                 >
                 </v-btn>
               </div>
@@ -239,7 +239,7 @@
     </div>
 
     <!--confirm step-->
-    <v-container class="confirmOuter" v-if="step == 6">
+    <v-container class="confirmOuter" v-if="step == 5">
       <v-row class="align-items-center">
         <v-col cols="12" md="3">
           <v-btn class="emailArrowBtn" prepend-icon="mdi-arrow-left" @click="previous()"> </v-btn>
@@ -270,7 +270,7 @@
                   <v-btn class="editButton" @click="next(3)"> Edit</v-btn>
                 </div>
               </div>
-              <div class="singleBlock">
+              <!-- <div class="singleBlock">
                 <div class="singleBlockInner">
                   <label>OHIP</label>
                   <h5>{{health.ohip}}</h5>
@@ -278,7 +278,7 @@
                 <div class="editBtn">
                   <v-btn class="editButton" @click="next(4)"> Edit</v-btn>
                 </div>
-              </div>
+              </div> -->
               <div class="singleBlock">
                 <div class="singleBlockInner">
                   <label>Email</label>
@@ -294,12 +294,12 @@
                   <h5>{{phone}}</h5>
                 </div>
                 <div class="editBtn">
-                  <v-btn class="editButton" @click="next(5)"> Edit</v-btn>
+                  <v-btn class="editButton" @click="next(4)"> Edit</v-btn>
                 </div>
               </div>
             </div>
             <div class="fill-height beginBtn">
-            <v-btn block  @click="next(7)"> Confirm </v-btn>
+            <v-btn block  @click="next(6)"> Confirm </v-btn>
           </div>
           </div>
 
@@ -309,7 +309,7 @@
     </v-container>
 
     <!-- Full name step-->
-    <div class="emailForm nameForm" v-if="step == 7">
+    <div class="emailForm nameForm" v-if="step == 6">
     <v-form v-model="valid">
       <v-row class="align-items-center">
       <v-col cols="12" md="3">
@@ -329,7 +329,7 @@
             placeholder="e.g. Ada Augusta Lovelace"
           ></v-text-field>
             <div class="pressEnter">
-             Press Enter <v-btn class="pressEnterBtn" prepend-icon="mdi-arrow-right" @click="next(8)"> </v-btn>
+             Press Enter <v-btn class="pressEnterBtn" prepend-icon="mdi-arrow-right" @click="next(7)"> </v-btn>
             </div>
           </div>
         </v-col>
@@ -339,7 +339,7 @@
     </div>
 
     <!--Relation step-->
-    <v-container class="confirmOuter" v-if="step == 8">
+    <v-container class="confirmOuter" v-if="step == 7">
         <v-row class="align-items-center">
         <v-col cols="12" md="3">
          <v-btn class="emailArrowBtn" prepend-icon="mdi-arrow-left" @click="previous()"> </v-btn>
@@ -348,20 +348,20 @@
           <div class="confirmInner">
               <h2>What is your relationship to the paitent ?</h2>
               <div class="confirmBlock">
-                  <div class="singleBlock" @click="setRelation(1)">
+                  <div class="singleBlock" @click="setRelation(1)"  v-bind:class="[selectedRealtion == 1 ? 'singleBlockhover' : '']">
                     <div class="singleBlockInner">
                       <label>Family Member</label>
                       <h5>E.g. spouse, partner, parents, siblings, children, other relatives </h5>
                     </div>
                   </div>
-                  <div class="singleBlock" @click="setRelation(2)">
+                  <div class="singleBlock" @click="setRelation(2)" v-bind:class="[selectedRealtion == 2 ? 'singleBlockhover' : '']">
                     <div class="singleBlockInner">
                       <label>Legally Appointed Individual</label>
                       <h5>E.g. Power of Attorney for Personal Care, court-appointed guardian, representative appointed by Consent & Capacity Board
                       (no famil relation)</h5>
                     </div>
                   </div>
-                  <div class="singleBlock" @click="setRelation(3)">
+                  <div class="singleBlock" @click="setRelation(3)" v-bind:class="[selectedRealtion == 3 ? 'singleBlockhover' : '']">
                     <div class="singleBlockInner">
                       <label>Public Guardian & Trustee</label>
                     </div>
@@ -425,25 +425,30 @@ export default {
       (v) => !!v || "Phone is required",
     ],
     step: 1,
-    progress: 12.5,
-    selectedRealtion: ''
+    progress: 14.28,
+    selectedRealtion: '',
+    hospitalName: ''
   }),
-  mounted() {},
+  mounted() {
+    this.hospitalName =  this.$route.query.hospital;
+  },
   methods: {
     next(stepNumber) {
       if (this.email) this.step = stepNumber;
-      this.progress = this.step * 12.5;
+      this.progress = this.step * 14.28;
     },
     previous(){
       this.step = this.step - 1;
-      this.progress = this.step * 12.5;
+      this.progress = this.step * 14.28;
     },
     setRelation(relation){
       this.selectedRealtion = relation;
     },
     redirectSignup(){
       this.$router.replace({name: "Signup"})
-
+    },
+    redirectImaging(){
+      this.$router.replace({name: "Imaging",  query: {hospital: this.hospitalName}})
     }
   },
 };

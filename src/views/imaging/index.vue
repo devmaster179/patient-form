@@ -7,7 +7,8 @@
             <div class="imagingInner">
               <div class="titleImg">
                 <h3>Imaging Record Access</h3>
-                <img src="../../assets/clearLogo.png" />
+                <h5>{{hospitalName}}</h5>
+
               </div>
               <div class="cardBlock">
                 <v-card class="mx-auto">
@@ -80,10 +81,14 @@ export default {
       (v) => !!v || "E-mail is required",
       (v) => /.+@.+/.test(v) || "E-mail must be valid",
     ],
+    hospitalName: ''
   }),
+  mounted() {
+    this.hospitalName =  this.$route.query.hospital;
+  },
   methods: {
    openSteps(){
-    this.$router.replace({name: "Form"})
+    this.$router.replace({name: "Form", query: {hospital: this.hospitalName}})
    }
   },
 };

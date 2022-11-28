@@ -194,9 +194,7 @@ confirm css
     font-size: 14px;
     background-color: transparent;
 }
-.singleBlock.lastBlock {
-    border-bottom: none;
-}
+
 .confirmOuter {
     margin: 100px auto;
 }

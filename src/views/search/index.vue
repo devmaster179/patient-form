@@ -27,8 +27,8 @@
           </v-text-field>
             <div class="searchSuggest">
               <ul>
-                <li v-for="innerData in data" @click="openImaging()">
-                  {{ innerData.name }}
+                <li v-for="innerData in data" @click="openImaging(innerData['Facility Name'])">
+                  {{ innerData['Facility Name'] }}
                 </li>
               </ul>
             </div>
@@ -84,8 +84,9 @@ export default {
       });
 
    },
-   openImaging(){
-    this.$router.replace({name: "Imaging"})
+   openImaging(hospitalName){
+    this.$router.replace({name: "Imaging",  query: {hospital: hospitalName}})
+    // this.$router.push({ path: 'Imaging', query: { plan: 'private' }})
    }
   },
 };
