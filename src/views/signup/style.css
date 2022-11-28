@@ -1,0 +1,37 @@
+.signupWrapper {
+    background-color: #1d1c2a;
+    padding-bottom: 200px;
+}
+.signupWrapper .logoWrapper {
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+}
+.logoWrapper h1 {
+    font-weight: 400;
+    color: #fff;
+    letter-spacing: 0.8px;
+    font-size: 38px;
+}
+.signupWrapper .signupInner {
+    background: #fff;
+    padding: 20px;
+    border-radius: 6px;
+}
+.signupInner .v-field.v-field--variant-filled.v-theme--light:hover {
+    border-radius: 4px;    
+}
+.signupInner .v-field.v-field--variant-filled.v-theme--light {
+    background-color: #1d1c2a;
+    color: #fff;
+    border-radius: 4px;
+}
+.submitBtn button.v-btn.v-btn--block {
+    background-color: #1d1c2a;
+    color: #fff;
+    border-radius: 4px;
+    height: 60px;
+    text-transform: capitalize;
+    font-size: 18px;
+}

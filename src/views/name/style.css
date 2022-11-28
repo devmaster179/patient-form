@@ -1,9 +1,0 @@
-.emailFormInner p {
-    margin-bottom: 15px;
-}
-.emailForm.nameForm .emailFormInner {
-    max-width: 400px;
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-}
